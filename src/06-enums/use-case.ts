@@ -23,7 +23,7 @@ class OrderService {
       id: `ord_${this.orders.length + 1}`,
       customerName,
       total,
-      status: OrderStatus.Pending,
+      status: OrderStatus.Pending
     };
 
     this.orders.push(order);
@@ -52,10 +52,11 @@ class OrderService {
 
 const orderService = new OrderService();
 const order1 = orderService.createOrder("Natheer", 200);
-orderService.createOrder("Ali", 150);
-
+const order2 = orderService.createOrder("Ali", 150);
+const order3 = orderService.createOrder('Saleh', 300)
 orderService.updateStatus(order1.id, OrderStatus.Paid);
-orderService.updateStatus(order1.id, OrderStatus.Shipped);
+orderService.updateStatus(order2.id, OrderStatus.Shipped);
+orderService.updateStatus(order3.id, OrderStatus.Paid);
 
-console.log(orderService.findByStatus(OrderStatus.Shipped));
+console.log(orderService.findByStatus(OrderStatus.Paid));
 console.log(orderService.findAll());

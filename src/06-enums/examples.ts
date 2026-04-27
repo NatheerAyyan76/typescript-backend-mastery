@@ -19,6 +19,7 @@ enum UserRole {
 const role: UserRole = UserRole.Admin;
 console.log(role, UserRole[role]);
 
+
 //! Example 3: Enum in Function Parameters
 enum PaymentMethod {
   Card = "CARD",
